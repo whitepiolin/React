@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import logo from './logo.svg';
-import Item from './staticToDo';
+import Item from './components/ToDoList';
+
+let todo = require('./data/data.json')
 
 class App extends Component {
   render() {
@@ -10,23 +12,35 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
+
         <section className="ToDoItem">
           <Item
-            name="Graduation Thesis"
-            deadLine="20-10-2018"
-            check="Undone" />
+            name={todo[0].name}
+            deadLine={todo[0].deadline}
+            check={todo[0].situation}
+          />
+          <input type="checkbox" value="Ok" />
+          <input type="submit" value="Submit" />
         </section>
+
         <section className="ToDoItem">
           <Item
-            name="Payment for Credit Card"
-            deadLine="10/10/2018"
-            check="Done" />
+            name={todo[1].name}
+            deadLine={todo[1].deadline}
+            check={todo[1].situation}
+          />
+          <input type="checkbox" value="Ok" />
+          <input type="submit" value="Submit" />
         </section>
+
         <section className="ToDoItem">
           <Item
-            name="Renovation of House"
-            deadLine="01/12/2018"
-            check="Undone" />
+            name={todo[2].name}
+            deadLine={todo[2].deadline}
+            check={todo[2].situation}
+          />
+          <input type="checkbox" value="Ok" />
+          <input type="submit" value="Submit" />
         </section>
       </div>
     );
