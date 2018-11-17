@@ -24,7 +24,7 @@ class App extends Component {
       if (item.id !== id) {
         return true;
       }
-      return false; 
+      return false;
     }
 
     const deletedData = this.state.Data.filter(filterByID);
